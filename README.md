@@ -207,14 +207,4 @@ Após escrever, adicione uma linha final com o total da soma dos números, no fo
 Total: 150
 (feito)
 ------------------------------------------------------------------------------------------------
-🧬 5 Exercícios de Herança e Polimorfismo
 
-Crie a classe Animal com o método fazerSom(). Derive Cachorro e Gato.
-
-Classe Funcionario com calcularSalario(). Crie Gerente e Vendedor.
-
-Crie uma classe Veiculo com acelerar(). Derive Carro e Moto.
-
-Crie uma classe Mensagem com enviar(). Crie Email e SMS.
-
-Crie Pessoa e derive Aluno e Professor. Implemente um método apresentar() polimórfico.
