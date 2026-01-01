@@ -1,0 +1,35 @@
+package exercicio2FileReader;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.OptionalInt;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Optional;
+public class Main {
+
+	public static void main(String[] args) {
+		File file = new File("C:\\exerciciosFile\\exerciciofileReader1.txt");
+		Scanner sc = null;
+		
+		System.out.println("Imprimindo apenas as vogais do texto");
+		try(FileReader fr = new FileReader(file)){
+			int ch;
+			int count=0;
+			while((ch = fr.read())!=-1){
+				char c =(char)ch;
+				if("aeiouáéíóúàèìòùâêîôûãõ".contains(String.valueOf(c))) {
+					System.out.println("vogal encontrada: " + c);
+					count++;
+				}
+			}
+			System.out.println(count);
+		}		
+		catch(IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

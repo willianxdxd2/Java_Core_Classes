@@ -1,0 +1,51 @@
+package exercicio4FileReader;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		File file = new File("C:\\exerciciosFile\\Transacoes.txt");
+		
+		try(Scanner sc =new Scanner(file)){
+			sc.useDelimiter(";");
+			while(sc.hasNext()) {
+				String palavra = sc.next();
+				String.valueOf(palavra);
+				try {Double l = Double.parseDouble(palavra);
+
+				try {
+					double m=Double.parseDouble(palavra);
+					List<Double> preços = new ArrayList<>();
+					System.out.println("Preço: " + m);
+					preços.add(m);
+				}catch(NumberFormatException e) {
+					
+				}
+				}catch(NumberFormatException e) {
+					System.out.println(palavra);
+				}
+				try {
+					int n=Integer.parseInt(palavra);
+						List<Integer>quantidades = new ArrayList<>();
+						System.out.println("Quantidade: " +  n);
+						quantidades.add(n);
+				}catch(NumberFormatException e) {
+		
+				}
+				
+			}
+			
+			
+		}catch(FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}

@@ -1,0 +1,76 @@
+package exercicio5FileReader;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		File file = new File("C:\\exerciciosFile\\log.txt");
+		
+		try(FileReader fr = new FileReader(file); 
+			BufferedReader br = new BufferedReader(fr))   {
+				String linha;
+			int linhas = 0;	
+			while((linha = br.readLine() )!= null) {
+				String[] palavras = linha.split(" ");
+			
+				
+				linhas++;
+			for(String palavra : palavras) {
+				try {
+					DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+					LocalDate data =LocalDate.parse(palavra,formato);
+					ArrayList<LocalDate> datas = new ArrayList<>();
+					datas.add(data);
+ 				}catch(DateTimeParseException e) {
+					e.getMessage();
+				}
+			}
+			}
+			
+			StringBuilder palavra = new StringBuilder();
+			int c;
+			FileReader fr2 = new FileReader(file);
+			while((c = fr2.read())!=-1 ){
+				char caractere = (char)c;
+				
+				if(caractere == ' ' || caractere == '\n' || caractere == '\r') {
+					
+					if(palavra.length() > 0) {
+						try {
+						DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+						LocalDate data =LocalDate.parse(palavra,formato);
+						}
+						catch(DateTimeParseException e){
+							System.out.println("Palavra: " + palavra.toString());
+						}
+						palavra.setLength(0);
+					}
+					
+				}else {
+					palavra.append(caractere);
+				}
+			}
+			
+			if(palavra.length() > 0) {
+				System.out.println("Palavra: " + palavra.toString());
+			}
+			
+			
+			
+			
+			
+	}catch(IOException e) {
+		e.getMessage();
+	}
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package interruptedException4;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		MinhaThread t = new MinhaThread();
+		
+		t.start();
+		
+		Thread.sleep(15000);
+		t.interrupt();
+		
+	}
+
+}

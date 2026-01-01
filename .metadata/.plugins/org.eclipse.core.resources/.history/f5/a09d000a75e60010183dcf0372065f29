@@ -1,0 +1,31 @@
+package NumberFormatException;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		ArrayList<String> lista = new ArrayList<>();
+		
+		System.out.println("Quantos itens vai colocar na lista?");
+		int n = sc.nextInt();
+		
+		for(int i = 0 ;i < n ; i++) {
+			System.out.println("Escreva o string: ");
+			String texto = sc.nextLine();
+			lista.add(texto);
+			
+		}
+		
+		
+		funcao func = new funcao();
+		for(String item : lista) {
+			func.funcao(item);
+		}
+
+	}
+
+}

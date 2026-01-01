@@ -1,0 +1,27 @@
+package ClassCastException;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Number[] numeros = new Number[3];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Insira os elementos no array:");
+		
+		for(int i = 0 ; i < 3 ; i++) {
+			int elemento = sc.nextInt();
+			numeros[i] = elemento;
+		}
+		try {
+		for(Number ele : numeros) {
+			Integer i = (Integer)ele;
+			System.out.println("Cast sucesso");
+		}
+		}catch(ClassCastException e) {
+			System.out.println("Erro: " + e.getMessage());
+		}
+	}
+
+}

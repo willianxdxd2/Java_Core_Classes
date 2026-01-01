@@ -1,0 +1,5 @@
+package ClassCastExceptio;
+
+public class cachorro extends animal{
+
+}

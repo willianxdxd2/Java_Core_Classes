@@ -1,0 +1,19 @@
+package main;
+
+public class MinhaThread2 extends Thread{
+	
+	private MinhaThread t;
+	public void run(MinhaThread t) {
+		
+		for(int i  = 0 ; i <= 10 ; i++) {
+		System.out.println("Thread2 rodando");
+		try {Thread.sleep(1000);}catch(InterruptedException e) {
+			e.getMessage();
+		}
+		if(i == 10) {
+		
+		t.setControle(false);
+		}
+	}}
+	}
+

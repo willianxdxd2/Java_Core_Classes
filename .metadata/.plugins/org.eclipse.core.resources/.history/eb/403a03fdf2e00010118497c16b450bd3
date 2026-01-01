@@ -1,0 +1,11 @@
+package uncheckedExceptions3;
+
+public class Main {
+
+	public static void main(String[] args) {
+		funcao func =  new funcao();
+		String nada = null;
+		func.imprimir(nada);
+	}
+
+}

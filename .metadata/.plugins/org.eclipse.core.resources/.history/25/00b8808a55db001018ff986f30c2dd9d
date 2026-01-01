@@ -1,0 +1,53 @@
+package exercicio4FileReader;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		File file = new File("C:\\exerciciosFile\\Transacoes.txt");
+		
+		try(Scanner sc =new Scanner(file)){
+			sc.useDelimiter(";");
+			ArrayList<Integer> quantidades = new ArrayList<>();
+			ArrayList<Double> preços = new ArrayList<>();
+			ArrayList<String> objetos = new ArrayList<>();
+			sc.useDelimiter(";|\\R");
+			while(sc.hasNext()) {
+				String palavra = sc.next();
+				
+				palavra = palavra.replace(",", ".");
+				try {
+					int n=Integer.parseInt(palavra);
+						quantidades.add(n);
+				}catch(NumberFormatException e) {
+					try {
+						double m=Double.parseDouble(palavra);
+	
+
+						preços.add(m);
+					}catch(NumberFormatException e1) {
+
+						objetos.add(palavra);
+					}
+				}
+			}
+			Double total_vendas = 0.0;
+			
+			for(int i = 0; i < objetos.size();i++) {
+				System.out.println("Item: " + objetos.get(i) + " Quantidade:" + quantidades.get(i) + " preço: " + preços.get(i) + "Total: " + quantidades.get(i) * preços.get(i));
+				total_vendas= total_vendas + quantidades.get(i) * preços.get(i);
+			}
+			System.out.println("Total das vendas: " + total_vendas);
+		}catch(FileNotFoundException e) {
+			//System.out.println(e.getMessage());
+		}
+		
+
+	}
+
+}

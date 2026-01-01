@@ -1,0 +1,7 @@
+package classNotFoundException;
+
+public class pessoa {
+	public pessoa() {
+		System.out.println("Pessoa criada");
+	}
+}

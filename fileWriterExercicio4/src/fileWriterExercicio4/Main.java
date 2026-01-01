@@ -1,0 +1,29 @@
+package fileWriterExercicio4;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+
+public class Main {
+
+	public static void main(String[] args) {
+		File file = new File("C:\\exerciciosfileWriter\\logs.txt");
+		LocalDate hoje = LocalDate.now();
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(file,true))){
+			for(int i=0;i<10;i++) {
+				bw.write("Evento"+ i +"aconteceu em: " + hoje);
+				
+				bw.newLine();
+			}
+			
+			
+		
+		}catch(IOException e) {
+			e.getMessage();
+		}
+
+	}
+
+}

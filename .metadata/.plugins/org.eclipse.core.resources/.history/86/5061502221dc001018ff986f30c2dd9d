@@ -1,0 +1,21 @@
+package classNotFoundException4;
+
+import java.lang.reflect.InvocationTargetException;
+
+public class Main {
+
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		try {
+			Class<?> classe = Class.forName("classNotFoundException4.pessoa");
+			Object obj = classe.getDeclaredConstructor().newInstance();
+			classe.getMethod("DizerOLa:").invoke(obj);
+			
+		}
+		catch(ClassNotFoundException e ){
+			e.printStackTrace();
+			
+		}
+
+	}
+
+}

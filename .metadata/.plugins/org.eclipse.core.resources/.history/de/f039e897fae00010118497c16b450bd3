@@ -1,0 +1,18 @@
+package arrayIndexOutOfBoundsException;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String[] vetor = new String[5];
+
+		Scanner sc = new Scanner(System.in);
+		
+
+		
+		System.out.println(vetor[8]);
+		
+	}
+
+}

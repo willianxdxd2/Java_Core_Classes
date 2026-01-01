@@ -1,0 +1,21 @@
+package main;
+
+public class MinhaThread extends Thread{
+	
+	public boolean controle = true;
+	public boolean isControle() {
+		return controle;
+	}
+	public void setControle(boolean controle) {
+		this.controle = controle;
+	}
+	public void run() {
+		
+		while(controle) {
+		System.out.println("Thread rodando");
+		try {Thread.sleep(5000);}catch(InterruptedException e) {
+			System.out.println("A thread 1 foi interrompida: " + e.getMessage());
+		}
+	}	
+	}
+}

@@ -1,0 +1,12 @@
+package entities;
+
+public class MinhaThread3 extends Thread{
+	@Override
+	public void run() {
+	for(int i =1 ;i <=100;i= i+ 12) {
+		System.out.println("3Baixando..."+ i + "%");
+		try {Thread.sleep(5000);}catch(InterruptedException e) {
+			System.out.println("Erro no download1" + e.getMessage());
+			break;}
+	}
+}}

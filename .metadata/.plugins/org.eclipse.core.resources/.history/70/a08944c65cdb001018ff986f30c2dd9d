@@ -1,0 +1,43 @@
+package exercicio5FileReader;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		File file = new File("C:\\exerciciosFile\\log.txt");
+		
+		try(FileReader fr = new FileReader(file); 
+			BufferedReader br = new BufferedReader(fr))   {
+				String linha;
+				
+			while((linha = br.readLine() )!= null) {
+				String[] palavras = linha.split(" ");
+			
+			
+			for(String palavra : palavras) {
+				try {
+					DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+					LocalDate data =LocalDate.parse(palavra,formato);
+					System.out.println("A data é: " + data);
+					ArrayList<LocalDate> datas = new ArrayList<>();
+					datas.add(data);
+ 				}catch(DateTimeParseException e) {
+					e.getMessage();
+				}
+			}
+		}
+	}catch(IOException e) {
+		e.getMessage();
+	}
+		
+	}
+
+}

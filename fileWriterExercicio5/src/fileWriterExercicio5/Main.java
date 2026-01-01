@@ -1,0 +1,35 @@
+package fileWriterExercicio5;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args) {
+		File file = new File("C:\\exerciciosfileWriter\\exercicio5.txt");
+		
+		int[] numeros= {10,20,30,40,50};
+		int soma = 0;
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(file,true))){
+			for(int numero : numeros) {
+				bw.write(String.valueOf(numero));
+				bw.newLine();
+				soma = soma + numero;
+			}
+			bw.write("Soma: ");
+			bw.newLine();
+			bw.write(String.valueOf(soma));
+			
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+
+	}
+
+}

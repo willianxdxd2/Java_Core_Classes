@@ -1,0 +1,15 @@
+package main;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		MinhaThread t = new MinhaThread();
+		MinhaThread2 t2 = new MinhaThread2();
+		
+		t2.run();
+		t.run();
+
+	}
+
+}

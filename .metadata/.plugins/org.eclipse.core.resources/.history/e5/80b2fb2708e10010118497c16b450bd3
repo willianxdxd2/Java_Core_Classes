@@ -1,0 +1,34 @@
+package arrayIndexOutOfBoundsException5;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args) {
+		File file = new File("C:\\arquivo\\numeros.txt");
+		int[] numeros = new int[8];
+		String linhas;
+		int i= 0;
+		try(BufferedReader br = new BufferedReader(new FileReader(file))){
+			while((linhas = br.readLine()) !=  null) {
+				System.out.println(linhas);
+				int numero = Integer.parseInt(linhas);
+				try {
+				numeros[i] = numero;
+				i++;
+				}catch(ArrayIndexOutOfBoundsException e ) {
+					System.out.println("Fora do alcance do array: " + e.getMessage());
+				}
+			}
+			
+			
+		}catch(IOException e ) {
+			
+			System.out.println("Erro ao ler o arquivo " + e.getMessage());
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+package ClassCastException;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ArrayList<Object> objetos = new ArrayList<>();
+		
+		String texto = "pera,maça";
+		objetos.add(texto);
+		
+		Integer numero = (Integer) objetos.get(0);
+		System.out.println(numero);
+
+	}
+
+}

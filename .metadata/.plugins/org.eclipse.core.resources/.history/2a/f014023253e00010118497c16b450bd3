@@ -1,0 +1,22 @@
+package entities;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		MinhaThread1 t1 = new MinhaThread1();
+		MinhaThread2 t2 = new MinhaThread2();
+		MinhaThread3 t3 = new MinhaThread3();
+
+		
+		
+		t1.start();
+		t2.start();
+		t3.start();
+		
+		Thread.sleep(15000);
+		Interromper in = new Interromper();
+		in.parar();
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package classNotFoundException;
+
+public class Main {
+
+	public static void main(String[] args)  {
+	
+		try{
+		Class<?> classe = Class.forName("Java.util.ArrayList");
+		System.out.println("Classe carregada com sucesso: " + classe.getName());
+		}
+		catch(ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+	}
+
+}}

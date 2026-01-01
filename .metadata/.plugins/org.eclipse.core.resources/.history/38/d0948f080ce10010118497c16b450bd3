@@ -1,0 +1,14 @@
+package ArithmeticException;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		int numero1 = 2;
+		int numero2 = 0;
+		
+		int divisao =2/0;
+		System.out.println(divisao);
+	}
+
+}

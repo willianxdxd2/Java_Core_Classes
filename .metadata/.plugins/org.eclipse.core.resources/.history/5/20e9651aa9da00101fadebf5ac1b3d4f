@@ -1,0 +1,37 @@
+package exercicio3FileReader;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+			File file = new File("C:\\exerciciosFile\\numeros.txt");
+			
+			System.out.println("Lendo numeros separado por espaço");
+			
+			try(Scanner sc = new Scanner(file)){
+				while(sc.hasNext()) {
+					String palavra = sc.next();
+					
+					try {
+						int numero = Integer.parseInt(palavra);
+						System.out.println("Numero encontrado: " + numero);
+					}catch(NumberFormatException e) {
+						
+					}
+				}
+					
+					
+					
+					
+					
+			}catch(FileNotFoundException e) {
+				System.out.println(e.getMessage());
+			}
+			
+			
+	}
+
+}

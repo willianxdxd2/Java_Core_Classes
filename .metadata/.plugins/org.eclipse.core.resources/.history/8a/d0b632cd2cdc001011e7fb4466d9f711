@@ -1,0 +1,10 @@
+package classNotFoundException5;
+
+public class Main {
+	
+	
+	String classe = "classNotFoundException5.pessoa";
+	String metodo = "digitaoi";
+	funcao func = new funcao();
+	func
+}

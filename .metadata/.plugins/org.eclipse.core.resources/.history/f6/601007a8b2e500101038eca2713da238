@@ -1,0 +1,29 @@
+package ArithmeticException;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digitar o preço: ");
+		int preço = sc.nextInt();
+		System.out.println("Digitar dias a parcelar: ");
+		int dias = sc.nextInt();
+		int divisao = 0;
+		try {
+			divisao = dias / preço;
+			System.out.println("Valor parcelado é de: " + divisao);
+			
+			
+			
+		}catch(ArithmeticException e) {
+			System.out.println("Erro ao parcelar: " + e.getMessage());
+		}
+		
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package sQLExceptionExercicio4;
+
+import java.sql.Connection;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String url = "jdbc:mysql://localhost:3306/banco_com_java?useSSL=false&serverTimezone=UTC";
+		String usuario =  "root";
+		String senha = "123456789123456789";
+
+		
+		
+		try {
+			Connection conn= DriverManager.getconnection(url,usuario,senha);
+		}
+	}
+
+}

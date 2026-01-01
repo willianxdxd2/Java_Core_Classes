@@ -1,0 +1,111 @@
+package exercicio5FileReader;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		File file = new File("C:\\exerciciosFile\\log.txt");
+		
+		try(FileReader fr = new FileReader(file); 
+			BufferedReader br = new BufferedReader(fr))   {
+				String linha;
+			int linhas = 0;	
+			while((linha = br.readLine() )!= null) {
+				String[] palavras = linha.split(" ");
+			
+				
+				linhas++;
+			for(String palavra : palavras) {
+				try {
+					DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+					LocalDate data =LocalDate.parse(palavra,formato);
+					ArrayList<LocalDate> datas = new ArrayList<>();
+					datas.add(data);
+ 				}catch(DateTimeParseException e) {
+					e.getMessage();
+				}
+			}
+			}
+			
+			StringBuilder palavra = new StringBuilder();
+			int c;
+			FileReader fr2 = new FileReader(file);
+			ArrayList<String> palavras = new ArrayList<>();
+			ArrayList<String> palavras_6 = new ArrayList<>();
+			int datas_inicio = 0;
+			int ponto = 0;
+			while((c = fr2.read())!=-1 ){
+				char caractere = (char)c;
+			
+				if (caractere == '.') {
+					ponto++;
+				}
+				
+				
+				
+				if(caractere == ' ' || caractere == '\n' || caractere == '\r') {
+					
+		
+					if(palavra.length() > 0) {
+						try {
+						DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+						LocalDate data =LocalDate.parse(palavra,formato);
+						datas_inicio++;
+						}
+						catch(DateTimeParseException e){
+							
+							if(palavra.length() == 6) {
+
+								palavras_6.add(palavra.toString());
+							}
+							
+							//System.out.println("Palavra: " + palavra.toString());
+
+							palavras.add(palavra.toString());
+						}
+						palavra.setLength(0);
+					}
+					
+				}else {
+					palavra.append(caractere);
+				}
+			}
+
+			if(palavra.length() > 0) {
+				//System.out.println("Palavra: " + palavra.toString());
+			}
+			String palavra_mais_longa = "";
+			for(String palavra_1 : palavras) {
+				if(palavra_1.length() > palavra_mais_longa.length()) {
+					palavra_mais_longa = palavra_1;
+				}
+			}
+			System.out.println("Total linhas: " + linhas);
+			System.out.println("Linhas com data inicio: "  + datas_inicio);
+			System.out.println("Palavras com mais de 6 caracteres: ");
+			for(String pal : palavras_6) {
+				System.out.println(pal);
+			}			
+			System.out.println("A palavra mais longa é: " + palavra_mais_longa);
+			System.out.println("Quantidade de linhas q terminam com ponto: " + ponto);
+			
+			
+			
+			
+			
+			
+	}catch(IOException e) {
+		e.getMessage();
+	}
+		
+	}
+
+}
