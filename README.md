@@ -14,7 +14,9 @@ Esse repositório é para fins didáticos contendo práticas sólidas com exceç
 -uso intensivo de try catch me fez entender melhor sua posição no codigo juntamente com o try with resources
 -Aprendi a conectar minha IDE com banco de dados SQL e tratar exceções relacionadas
 -Aprendi a usar FileReader e BufferedReader como leitor de arquivos e achei interessante como eles podem interagir com a minha máquina
-A. Checked Exceptions (precisam ser tratadas com try/catch ou throws)
+
+
+Exercicios:
 1️⃣ IOException / FileNotFoundException
 
 Ler um arquivo chamado dados.txt e imprimir cada linha.(feito)
