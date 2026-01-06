@@ -14,8 +14,36 @@ Esse repositório é para fins didáticos contendo práticas sólidas com exceç
 -uso intensivo de try catch me fez entender melhor sua posição no codigo juntamente com o try with resources
 -Aprendi a conectar minha IDE com banco de dados SQL e tratar exceções relacionadas
 -Aprendi a usar FileReader e BufferedReader como leitor de arquivos e achei interessante como eles podem interagir com a minha máquina
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java – Core – Classes
 
+This repository is intended for educational purposes, containing solid practices focused on exception handling and error management, aiming to improve clarity and confidence when solving real-world problems.
 
+Technologies
+
+Java SE
+
+Eclipse
+
+SQL
+
+FileReader / BufferedReader
+
+What I Learned
+
+I learned how to better navigate and structure exception handling, gaining a more technical understanding of how exceptions occur and propagate in Java.
+
+The intensive use of try-catch blocks helped me understand their correct placement in the code, along with the proper use of try-with-resources.
+
+I learned how to connect my IDE to a SQL database and handle database-related exceptions.
+
+I learned how to use FileReader and BufferedReader for file reading, and found it particularly interesting how they interact directly with the local file system.
+
+Additional Notes
+
+This project is part of my continuous learning process in Java Core and Object-Oriented Programming, with a strong focus on writing safer, cleaner, and more maintainable code through proper error handling.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *Exercicios*
 
 1️⃣ IOException / FileNotFoundException
