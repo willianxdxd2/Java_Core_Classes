@@ -16,7 +16,8 @@ Esse repositório é para fins didáticos contendo práticas sólidas com exceç
 -Aprendi a usar FileReader e BufferedReader como leitor de arquivos e achei interessante como eles podem interagir com a minha máquina
 
 
-Exercicios:
+*Exercicios*
+
 1️⃣ IOException / FileNotFoundException
 
 Ler um arquivo chamado dados.txt e imprimir cada linha.(feito)
